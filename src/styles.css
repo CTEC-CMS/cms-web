@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-body{
+    background: #007bff;
+    min-height: 100vh;
+}
+
+.description-text{
+    position: absolute;
+    font-weight: 400;
+    bottom: 5em;
+    left: 4em;
+    font-size: 1.5em;
+    color: #fff;
+    width: 55%;
+    text-align: justify;
+}
+
+.fab-css{
+    position: fixed!important;
+    bottom: 5em!important;
+    right: 2.5em!important;
+    border-radius: 30px!important;
+    width: 50px!important;
+    height: 50px!important;
+    padding: 14px 20px!important;
+}
+.height-72{
+
+    min-height: 72vh;
+
+}
