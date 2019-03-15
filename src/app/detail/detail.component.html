@@ -1,0 +1,277 @@
+<div class="az-header az-header-dashboard-four">
+  <div class="container-fluid">
+    <div class="az-header-left">
+      <a href="index.html" class="az-logo"><span>CMS</span>&nbsp;&nbsp;Provider&nbsp;&nbsp;Matching&nbsp;&nbsp;Service</a>
+      <a href="" id="azNavShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+    </div><!-- az-header-left -->
+    <div class="az-header-center">
+      <input type="search" class="form-control" placeholder="Search..">
+      <button class="btn"><i class="fas fa-search"></i></button>
+    </div><!-- az-header-center -->
+    <div class="az-header-right">
+
+      <div class="dropdown az-header-notification">
+        <a href="" class="new"><i class="typcn typcn-bell"></i></a>
+        <div class="dropdown-menu">
+          <div class="az-dropdown-header mg-b-20 d-sm-none">
+            <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+          </div>
+          <h6 class="az-notification-title">Notifications</h6>
+          <p class="az-notification-text">You have 2 unread notification</p>
+          <div class="az-notification-list">
+            <div class="media new">
+              <div class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></div>
+              <div class="media-body">
+                <p>New File <strong>Uploaded</strong> </p>
+                <span>Mar 15 12:32pm</span>
+              </div><!-- media-body -->
+            </div><!-- media -->
+
+          </div><!-- az-notification-list -->
+          <div class="dropdown-footer"><a href="">View All Notifications</a></div>
+        </div><!-- dropdown-menu -->
+      </div><!-- az-header-notification -->
+      <div class="dropdown az-profile-menu">
+        <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
+        <div class="dropdown-menu">
+          <div class="az-dropdown-header d-sm-none">
+            <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+          </div>
+          <div class="az-header-profile">
+            <div class="az-img-user">
+              <img src="https://via.placeholder.com/500x500" alt="">
+            </div><!-- az-img-user -->
+            <h6>Vinay Pande</h6>
+
+          </div><!-- az-header-profile -->
+
+          <a href="/" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+        </div><!-- dropdown-menu -->
+      </div>
+    </div><!-- az-header-right -->
+  </div><!-- container -->
+</div><!-- az-header -->
+
+<div class="az-navbar az-navbar-two">
+  <div class="container-fluid">
+    <div><a href="index.html" class="az-logo"><span>CMS</span>&nbsp;&nbsp;Provider&nbsp;&nbsp;Matching&nbsp;&nbsp;Service</a></div>
+    <div class="az-navbar-search">
+      <input type="search" class="form-control" placeholder="Search for schedules and events...">
+      <button class="btn"><i class="fas fa-search "></i></button>
+    </div><!-- az-navbar-search -->
+    <ul class="nav">
+      <li class="nav-label">Main Menu</li>
+      <li class="nav-item ">
+        <a href="" routerLink="/landing" class="nav-link"><i class="typcn typcn-clipboard"></i>Dashboard</a>
+
+      </li><!-- nav-item -->
+      <li class="nav-item">
+        <a href="" routerLink="/myResponse" class="nav-link "><i class="typcn typcn-document"></i>My Request</a>
+
+      </li><!-- nav-item -->
+
+    </ul><!-- nav -->
+  </div><!-- container -->
+</div><!-- az-navbar -->
+
+<div class="az-content az-content-dashboard-four">
+  <div class="media media-dashboard">
+    <div class="media-body">
+      <div class="az-content-header">
+          
+        <div>
+          <h6 class="az-content-title tx-18 mg-b-5">Request Details</h6>
+        </div>
+        <div class="az-content-breadcrumb">
+            <span> <a href="" routerLink="/myResponse">  My Request</a></span>
+            <span>My Request Detail</span>
+          </div>
+
+
+      </div><!-- az-content-header -->
+      <div class="row row-sm">
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <div class="card card-body card-dashboard-fifteen">
+            <h3>{{files.reqId}}</h3>
+            <label class="tx-purple">Request ID</label>
+
+
+          </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-0">
+          <div class="card card-body card-dashboard-fifteen">
+            <h3>{{files.totalRecords}}</h3>
+            <label class="tx-primary">Number of Records</label>
+
+
+          </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-20 mg-lg-t-0">
+          <div class="card card-body card-dashboard-fifteen">
+            <h3 class="tx-success">{{files.status}}</h3>
+            <label>Status</label>
+
+
+          </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-20 mg-lg-t-0">
+          <div class="card card-body card-dashboard-fifteen">
+            <h3>{{files.dateTime | date: 'dd-MM-yyyy & hh:mm a'}}</h3>
+            <label class="tx-teal">Date & Time</label>
+
+
+          </div><!-- card -->
+        </div><!-- col -->
+
+        <div class="col-xl-6 mg-t-15 mg-t-20"  *ngIf="files.status === 'success'">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="card-title tx-14 mg-b-5">Success Detail</h6>
+              <p class="tx-gray-600 mg-b-0">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+            </div><!-- card-header -->
+            <div class="card-body row pd-25">
+
+              <table class="table ">
+
+                <tbody>
+                  <tr>
+                    <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</td>
+                  </tr>
+                  <tr>
+                    <td>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- card-body -->
+          </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status !== 'success'">
+            <div class="card">
+                <div class="card-header">
+                  <h6 class="card-title tx-14 mg-b-5">Error Detail</h6>
+                  <p class="tx-gray-600 mg-b-0">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                </div><!-- card-header -->
+                <div class="card-body row pd-25">
+    
+                  <table class="table ">
+    
+                    <tbody>
+                      <tr>
+                        <td>Invalid TIN - ABCD1234</td>
+                      </tr>
+                      <tr>
+                          <td>Invalid TIN - ABCD1234</td>
+                      </tr>
+                      <tr>
+                          <td>Invalid TIN - ABCD1234</td>
+                      </tr>
+                      <tr>
+                          <td>Invalid TIN - ABCD1234</td>
+                      </tr>
+                      <tr>
+                          <td>Invalid TIN - ABCD1234</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div><!-- card-body -->
+              </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-md-5 col-lg-5 col-xl-4 mg-t-20">
+          <div class="card card-dashboard-sixteen">
+            <div class="card-header">
+              <h6 class="card-title tx-14 mg-b-0">Download</h6>
+            </div><!-- card-header -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table mg-b-0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class=""><i class="fa fa-download"></i></div>
+                      </td>
+                      <td>
+                        <h6 class="mg-b-0 tx-inverse">Download Input File</h6>
+                        <small class="tx-11 tx-gray-500"><a href="">Download</a></small>
+                      </td>
+                      
+                    </tr>
+                    <tr *ngIf="files.status !== 'success'">
+                        <td>
+                          <div class=""><i class="fa fa-download"></i></div>
+                        </td>
+                        <td>
+                          <h6 class="mg-b-0 tx-inverse">Download Error File</h6>
+                          <small class="tx-11 tx-gray-500"><a href="">Download</a></small>
+                        </td>
+                        
+                      </tr>
+                  </tbody>
+                </table>
+              </div><!-- table-responsive -->
+            </div><!-- card-body -->
+          </div><!-- card -->
+        </div><!-- col -->
+        <div class="col-md-7 col-lg-7 col-xl-8 mg-t-20" *ngIf="files.status === 'success'">
+          <div class="card">
+            <div class="card-header">
+              <h6 class="card-title tx-14 mg-b-5">Download standardized Fixed Length Output File</h6>
+              <p class="mg-b-0">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            </div><!-- card-header -->
+            <div class="card-body">
+                <div class="table-responsive mg-t-15">  
+                    <table class="table table-striped table-talk-time">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>File Name</th>
+                          <th>Download</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let file of outputFiles; let i=index">
+                          <td>{{sno + i}}</td>
+                          <td>{{file.outputFile}}</td>
+                          <td><a (click)="downloadFile(file.Key)"><i class="fa fa-download"></i></a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div><!-- card-body -->
+          </div><!-- card -->
+        </div><!-- col -->
+      </div>
+
+    
+
+
+
+
+
+    </div><!-- media-body -->
+
+
+  </div><!-- media -->
+
+</div><!-- az-content -->
+
+<!-- <button class="btn btn-indigo btn-icon fab-css"><i class="typcn typcn-upload-outline"></i></button> -->
+
+
+
+
+
+<div class="az-footer">
+  <div class="container-fluid">
+    <span>&copy; 2019 CMS</span>
+
+  </div><!-- container -->
+</div><!-- az-footer -->
