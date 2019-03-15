@@ -1,0 +1,212 @@
+<div class="az-header az-header-dashboard-four">
+    <div class="container-fluid">
+      <div class="az-header-left">
+        <a href="index.html" class="az-logo"><span>CMS</span>&nbsp;&nbsp;Provider&nbsp;&nbsp;Matching&nbsp;&nbsp;Service</a>
+        <a href="" id="azNavShow" class="az-header-menu-icon d-lg-none"><span></span></a>
+      </div><!-- az-header-left -->
+      <div class="az-header-center">
+        <input type="search" class="form-control" placeholder="Search..">
+        <button class="btn"><i class="fas fa-search"></i></button>
+      </div><!-- az-header-center -->
+      <div class="az-header-right">
+        
+        <div class="dropdown az-header-notification">
+          <a href="" class="new"><i class="typcn typcn-bell"></i></a>
+          <div class="dropdown-menu">
+            <div class="az-dropdown-header mg-b-20 d-sm-none">
+              <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+            </div>
+            <h6 class="az-notification-title">Notifications</h6>
+            <p class="az-notification-text">You have 2 unread notification</p>
+            <div class="az-notification-list">
+              <div class="media new">
+                <div class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></div>
+                <div class="media-body">
+                  <p>New File <strong>Uploaded</strong> </p>
+                  <span>Mar 15 12:32pm</span>
+                </div><!-- media-body -->
+              </div><!-- media -->
+             
+            </div><!-- az-notification-list -->
+            <div class="dropdown-footer"><a href="">View All Notifications</a></div>
+          </div><!-- dropdown-menu -->
+        </div><!-- az-header-notification -->
+        <div class="dropdown az-profile-menu">
+          <a href="" class="az-img-user"><img src="https://via.placeholder.com/500x500" alt=""></a>
+          <div class="dropdown-menu">
+            <div class="az-dropdown-header d-sm-none">
+              <a href="" class="az-header-arrow"><i class="icon ion-md-arrow-back"></i></a>
+            </div>
+            <div class="az-header-profile">
+              <div class="az-img-user">
+                <img src="https://via.placeholder.com/500x500" alt="">
+              </div><!-- az-img-user -->
+              <h6>Vinay Pande</h6>
+              
+            </div><!-- az-header-profile -->
+
+            <a href="/" class="dropdown-item"><i class="typcn typcn-power-outline"></i> Sign Out</a>
+          </div><!-- dropdown-menu -->
+        </div>
+      </div><!-- az-header-right -->
+    </div><!-- container -->
+  </div><!-- az-header -->
+
+  <div class="az-navbar az-navbar-two">
+    <div class="container-fluid">
+      <div><a href="index.html" class="az-logo"><span>CMS</span>&nbsp;&nbsp;Provider&nbsp;&nbsp;Matching&nbsp;&nbsp;Service</a></div>
+      <div class="az-navbar-search">
+        <input type="search" class="form-control" placeholder="Search for schedules and events...">
+        <button class="btn"><i class="fas fa-search "></i></button>
+      </div><!-- az-navbar-search -->
+      <ul class="nav">
+        <li class="nav-label">Main Menu</li>
+        <li class="nav-item active">
+          <a href="" routerLink="/landing" class="nav-link"><i class="typcn typcn-clipboard"></i>Dashboard</a>
+          
+        </li><!-- nav-item -->
+        <li class="nav-item">
+          <a href="" routerLink="/myResponse" class="nav-link "><i class="typcn typcn-document"></i>My Request</a>
+          
+        </li><!-- nav-item -->
+       
+      </ul><!-- nav -->
+    </div><!-- container -->
+  </div><!-- az-navbar -->
+
+  <div class="az-content az-content-dashboard-four" style="height: 75vh;">
+    <div class="media media-dashboard">
+      <div class="media-body">
+        <div class="az-content-header">
+          <div>
+            <h6 class="az-content-title tx-18 mg-b-5">Dashboard</h6>
+            <p class="az-content-text tx-13 mg-b-0">Hi, welcome back! Here's your Dashboard</p>
+          </div>
+          <div class="btn-group">
+              <button class="btn active" style="    background: #007bff;
+              color: #fff;">Day  </button>
+              <button class="btn">Week</button>
+              <button class="btn">Month</button>
+            </div>
+
+         
+        </div><!-- az-content-header -->
+
+        <div class="row row-sm mg-b-20">
+            <div class="col-lg-12">
+              <div class="row row-xs row-sm--sm">
+                <div class="col-sm-6 col-md-2">
+                  <div class="card card-dashboard-seventeen">
+                    <div class="card-body">
+                      <h6 class="card-title">Service Highly Available </h6>
+                      <div>
+                        <h4>233 Hours</h4>
+                        
+                      </div>
+                    </div>
+                    <div class="chart-wrapper">
+                      <div id="flotChart1" class="flot-chart"></div>
+                    </div><!-- chart-wrapper -->
+                  </div>
+                </div><!-- col -->
+                <div class="col-sm-6 col-md-2 mg-t-20 mg-md-t-0">
+                    <div class="card card-dashboard-seventeen bg-primary tx-white">
+                      <div class="card-body">
+                        <h6 class="card-title">Number of Standard files Processed</h6>
+                        <div>
+                          <h4 class="text-white">500</h4>
+                          
+                        </div>
+                      </div><!-- card-body -->
+                      <div class="chart-wrapper">
+                        <div id="flotChart4" class="flot-chart"></div>
+                      </div><!-- chart-wrapper -->
+                    </div>
+                  </div><!-- col -->
+                <div class="col-sm-6 col-md-2 mg-t-20 mg-sm-t-0">
+                  <div class="card card-dashboard-seventeen">
+                    <div class="card-body">
+                      <h6 class="card-title">Number of Error Files Generated
+                        </h6>
+                      <div>
+                        <h4>100</h4>
+                       
+                      </div>
+                    </div><!-- card-body -->
+                    <div class="chart-wrapper">
+                      <div id="flotChart2" class="flot-chart"></div>
+                    </div><!-- chart-wrapper -->
+                  </div><!-- card -->
+                </div><!-- col -->
+                <div class="col-sm-6 col-md-2 mg-t-20 mg-md-t-0">
+                  <div class="card card-dashboard-seventeen bg-primary-dark tx-white">
+                    <div class="card-body">
+                      <h6 class="card-title">Number of Active Users</h6>
+                      <div>
+                        <h4 class="text-white">50</h4>
+                      
+                      </div>
+                    </div><!-- card-body -->
+                    <div class="chart-wrapper">
+                      <div id="flotChart3" class="flot-chart"></div>
+                    </div><!-- chart-wrapper -->
+                  </div><!-- card -->
+                </div><!-- col -->
+                
+                <div class="col-sm-6 col-md-2">
+                    <div class="card card-dashboard-seventeen">
+                      <div class="card-body">
+                        <h6 class="card-title">Number of Standard Services Available
+                          </h6>
+                        <div>
+                          <h4>10</h4>
+                          
+                        </div>
+                      </div>
+                      <div class="chart-wrapper">
+                        <div id="flotChart5" class="flot-chart"></div>
+                      </div><!-- chart-wrapper -->
+                    </div>
+                  </div><!-- col -->
+                  <div class="col-sm-6 col-md-2 mg-t-20 mg-sm-t-0">
+                    <div class="card card-dashboard-seventeen">
+                      <div class="card-body">
+                        <h6 class="card-title">Number of Records Processed
+                          </h6>
+                        <div>
+                          <h4>100</h4>
+                         
+                        </div>
+                      </div><!-- card-body -->
+                      <div class="chart-wrapper">
+                        <div id="flotChart6" class="flot-chart"></div>
+                        <div id="flotChart" class="flot-chart"  style="display:none"></div>
+                      </div><!-- chart-wrapper -->
+                    </div><!-- card -->
+                  </div><!-- col -->
+               
+                
+              </div><!-- row -->
+            </div><!-- col -->
+           
+  
+        
+
+       
+      </div><!-- media-body -->
+
+     
+    </div><!-- media -->
+
+  </div><!-- az-content -->
+
+  <div class="az-footer">
+    <div class="container-fluid">
+      <span>&copy; 2019 CMS</span>
+     
+    </div><!-- container -->
+  </div><!-- az-footer -->
+
+
+  
+
