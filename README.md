@@ -12,13 +12,11 @@ PMS is capable of receiving files of varied models (payment methodologies), iden
 
 4) AWS Lambda executes the Lambda function 
 
-5) Lambda function validates the data from CSV file and create output files in the "success" folder of the S3 bucket and moves the original file to "archive" folder.
+5) Lambda function validates the data from CSV file and create output files in the "success" folder of the S3 bucket and moves the original file to "archive" folder. If there is any validation error, the original CSV file is moved to "error" folder in the S3 bucket.
 
-6) If there is any validation error, the original CSV file is moved to "error" folder in the S3 bucket.
+6) Logs from Lambda function is pushed to AWS Cloudwatch.
 
-7) Logs from Lambda function is pushed to AWS Cloudwatch.
-
-8) Transaction record is maintained in AWS DynamoDB.
+7) Transaction record is maintained in AWS DynamoDB.
 
 ## Code Pipeline
 ![Code Pipeline](/images/PMS-CodePipeline.png)
