@@ -82,18 +82,16 @@
       <div class="col-md-12 col-xl-12">
         <div class="card card-table-two height-72">
           <h6 class="card-title">My Request</h6>
-          <span class="d-block mg-b-20">Sample Text Comes Here</span>
+          <span class="d-block mg-b-20"></span>
           <div class="table-responsive">
             <table class="table table-striped table-dashboard-two">
               <thead>
                 <tr>
-                  <th class="wd-lg-10p">Req ID</th>
-                  <th class="wd-lg-25p">Input File</th>
-                  <th class="wd-lg-10p">Current Status</th>
-                  <th class="wd-lg-10p">Date / Time</th>
-
-                  <th class="wd-lg-25p">Standardized Output
-                  </th>
+                  <th class="wd-lg-15p">Req ID</th>
+                  <th class="wd-lg-20p">Input File</th>
+                  <th class="wd-lg-15p">Current Status</th>
+                  <th class="wd-lg-15p">Date / Time</th>
+                  <!-- <th class="wd-lg-25p">Standardized Output</th> -->
                   <th class="wd-lg-10p">Detail</th>
 
                 </tr>
@@ -105,7 +103,7 @@
                   <td>{{allFiles.uploadFileName}}</td>
                   <td class="tx-medium tx-success">{{allFiles.status}}</td>
                   <td class="tx-medium tx-inverse">{{allFiles.createdOn | date: 'dd-MMM-yyyy hh:mm a'}}</td>
-                  <td class="tx-medium tx-inverse">View Output File</td>
+                  <!-- <td class="tx-medium tx-inverse">View Output File</td> -->
                   <td class="tx-medium tx-inverse"> <a (click)="viewDetails(allFiles)"><i class="fa fa-eye"></i></a>
                   </td>
                 </tr>
