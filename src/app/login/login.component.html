@@ -6,20 +6,21 @@
   <div class="az-card-signin">
     <h1 class="az-logo"><img src="../../assets/img/Logo-CMS@1x-O.png" alt=""></h1>
     <div class="az-signin-header">
+      <form [formGroup]="loginForm">
       <h2>Welcome back!</h2>
       <h4>Please sign in to continue</h4>
 
      
         <div class="form-group">
           <label>Email</label>
-          <input type="text" class="form-control" placeholder="Enter your email" value={{userName}}>
+          <input type="text" class="form-control" placeholder="Enter your email" formControlName="userName">
         </div><!-- form-group -->
         <div class="form-group">
           <label>Password</label>
-          <input type="password" class="form-control" placeholder="Enter your password" value={{password}}>
+          <input type="password" class="form-control" placeholder="Enter your password" formControlName="password" >
         </div><!-- form-group -->
-        <a routerLink="landing"><button class="btn btn-az-primary btn-block" >Sign In</button></a>
-        
+        <a><button class="btn btn-az-primary btn-block" (click)="login(loginForm.value)" >Sign In</button></a>
+        </form>
     </div><!-- az-signin-header -->
     <div class="az-signin-footer">
       <p><a href="">Forgot password?</a></p>
