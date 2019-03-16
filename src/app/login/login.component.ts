@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AwsService } from '../services/aws.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  userName = '';
+  password = '';
+  constructor(private awsService: AwsService) {
+    this.userName = awsService.USER_NAME;
+    this.password = awsService.PASSWORD;
+
+   }
 
   ngOnInit() {
   }

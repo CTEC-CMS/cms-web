@@ -4,13 +4,18 @@
 
 export const environment = {
   production: false,
-  ACCESS_KEY: 'AKIAITHOYC26NQ6ZPZDA',
-  SECRET_ACCESS_KEY: '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',
-  REGION: 'us-east-2',
-  TABLE_NAME: 'CMS_PROVIDER_MATCHING_REQUEST',
-  BUCKET_NAME: 'cms-provider-input-bucket',
 };
 
+export  const   CMS_CONSTANTS = {
+  CMS_USERNAME : 'cms-provider@cms.com',
+  CMS_PASSWORD : 'Welcome!',
+  ACCESS_KEY: 'PRODUCTION_ACCESS_KEY',
+  SECRET_ACCESS_KEY: 'PRODUCTION_SECRET_ACCESS_KEY',
+  REGION: 'us-east-2',
+  TABLE_NAME: 'TABLE_FOR_CMS_PROVIDER_MATCHING_REQUEST',
+  BUCKET_NAME: 'PRODCUCTION_BUCKET',
+  REQUEST_URL: 'https://29zf7dfc23.execute-api.us-east-2.amazonaws.com/production/requests',
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

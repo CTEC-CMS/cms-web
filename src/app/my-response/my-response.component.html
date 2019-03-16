@@ -6,7 +6,7 @@
       <a href="" id="azNavShow" class="az-header-menu-icon d-lg-none"><span></span></a>
     </div>
     <div class="az-header-center">
-      <input type="search" class="form-control" placeholder="Search.." (input)="applyFilter($event.target.value)">
+      <input type="search" class="form-control" placeholder="Search..">
       <button class="btn"><i class="fas fa-search"></i></button>
     </div>
     <div class="az-header-right">
@@ -101,10 +101,10 @@
               <tbody *ngIf="downloadFile.length > 0">
                 <tr *ngFor="let allFiles of downloadFile | paginate: { itemsPerPage: 10, currentPage: p }">
                   <!-- slice:1 |  -->
-                  <td>{{allFiles.reqId}}</td>
-                  <td>{{allFiles.inputFileName}}</td>
+                  <td>{{allFiles.id}}</td>
+                  <td>{{allFiles.uploadFileName}}</td>
                   <td class="tx-medium tx-success">{{allFiles.status}}</td>
-                  <td class="tx-medium tx-inverse">{{allFiles.dateTime | date: 'dd-MMM-yyyy hh:mm a'}}</td>
+                  <td class="tx-medium tx-inverse">{{allFiles.createdOn | date: 'dd-MMM-yyyy hh:mm a'}}</td>
                   <td class="tx-medium tx-inverse">View Output File</td>
                   <td class="tx-medium tx-inverse"> <a (click)="viewDetails(allFiles)"><i class="fa fa-eye"></i></a>
                   </td>

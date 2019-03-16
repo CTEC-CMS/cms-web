@@ -8,6 +8,7 @@ import { LandingComponent } from './landing/landing.component';
 import { MyResponseComponent } from './my-response/my-response.component';
 import { DetailComponent } from './detail/detail.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

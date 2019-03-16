@@ -92,7 +92,7 @@
       <div class="row row-sm">
         <div class="col-sm-6 col-lg-4 col-xl-3">
           <div class="card card-body card-dashboard-fifteen">
-            <h3>{{files.reqId}}</h3>
+            <h3>{{files.id}}</h3>
             <label class="tx-purple">Request ID</label>
 
 
@@ -100,7 +100,7 @@
         </div><!-- col -->
         <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-0">
           <div class="card card-body card-dashboard-fifteen">
-            <h3>{{files.totalRecords}}</h3>
+            <h3>{{files.recordsProcessed}}</h3>
             <label class="tx-primary">Number of Records</label>
 
 
@@ -116,19 +116,19 @@
         </div><!-- col -->
         <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-20 mg-lg-t-0">
           <div class="card card-body card-dashboard-fifteen">
-            <h3>{{files.dateTime | date: 'dd-MM-yyyy & hh:mm a'}}</h3>
+            <h3>{{files.createdOn | date: 'dd-MM-yyyy & hh:mm a'}}</h3>
             <label class="tx-teal">Date & Time</label>
 
 
           </div><!-- card -->
         </div><!-- col -->
 
-        <div class="col-xl-6 mg-t-15 mg-t-20"  *ngIf="files.status === 'success'">
+        <!-- <div class="col-xl-6 mg-t-15 mg-t-20"  *ngIf="files.status === 'success'">
           <div class="card">
             <div class="card-header">
               <h6 class="card-title tx-14 mg-b-5">Success Detail</h6>
               <p class="tx-gray-600 mg-b-0">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
-            </div><!-- card-header -->
+            </div><!-- card-header ->
             <div class="card-body row pd-25">
 
               <table class="table ">
@@ -151,80 +151,39 @@
                   </tr>
                 </tbody>
               </table>
-            </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- col -->
+            </div>
+          </div>
+        </div> -->
         <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status !== 'success'">
             <div class="card">
                 <div class="card-header">
                   <h6 class="card-title tx-14 mg-b-5">Error Detail</h6>
-                  <p class="tx-gray-600 mg-b-0">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                  <!-- <p class="tx-gray-600 mg-b-0">Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p> -->
                 </div><!-- card-header -->
                 <div class="card-body row pd-25">
     
-                  <table class="table ">
-    
+                  <table class="table">
+                    <tr>
+                      <td>Row No</td>
+                      <td>Column Name</td>
+                      <td>Error Message</td>
+                    </tr>
                     <tbody>
-                      <tr>
-                        <td>Invalid TIN - ABCD1234</td>
-                      </tr>
-                      <tr>
-                          <td>Invalid TIN - ABCD1234</td>
-                      </tr>
-                      <tr>
-                          <td>Invalid TIN - ABCD1234</td>
-                      </tr>
-                      <tr>
-                          <td>Invalid TIN - ABCD1234</td>
-                      </tr>
-                      <tr>
-                          <td>Invalid TIN - ABCD1234</td>
+                      <tr *ngFor="let error of errorMessages">
+                        <td>{{error.rowNumber}}</td>
+                        <td>{{error.columnName}}</td>
+                        <td>{{error.value}} - {{error.error}}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div><!-- card-body -->
               </div><!-- card -->
         </div><!-- col -->
-        <div class="col-md-5 col-lg-5 col-xl-4 mg-t-20">
-          <div class="card card-dashboard-sixteen">
-            <div class="card-header">
-              <h6 class="card-title tx-14 mg-b-0">Download</h6>
-            </div><!-- card-header -->
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table mg-b-0">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class=""><i class="fa fa-download"></i></div>
-                      </td>
-                      <td>
-                        <h6 class="mg-b-0 tx-inverse">Download Input File</h6>
-                        <small class="tx-11 tx-gray-500"><a href="">Download</a></small>
-                      </td>
-                      
-                    </tr>
-                    <tr *ngIf="files.status !== 'success'">
-                        <td>
-                          <div class=""><i class="fa fa-download"></i></div>
-                        </td>
-                        <td>
-                          <h6 class="mg-b-0 tx-inverse">Download Error File</h6>
-                          <small class="tx-11 tx-gray-500"><a href="">Download</a></small>
-                        </td>
-                        
-                      </tr>
-                  </tbody>
-                </table>
-              </div><!-- table-responsive -->
-            </div><!-- card-body -->
-          </div><!-- card -->
-        </div><!-- col -->
-        <div class="col-md-7 col-lg-7 col-xl-8 mg-t-20" *ngIf="files.status === 'success'">
+        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status === 'success'">
           <div class="card">
             <div class="card-header">
               <h6 class="card-title tx-14 mg-b-5">Download standardized Fixed Length Output File</h6>
-              <p class="mg-b-0">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+              <!-- <p class="mg-b-0">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p> -->
             </div><!-- card-header -->
             <div class="card-body">
                 <div class="table-responsive mg-t-15">  
@@ -248,6 +207,42 @@
             </div><!-- card-body -->
           </div><!-- card -->
         </div><!-- col -->
+        <div class="col-gl-5 col-xl-6 mg-t-20">
+          <div class="card card-dashboard-sixteen">
+            <div class="card-header">
+              <h6 class="card-title tx-14 mg-b-0">Download</h6>
+            </div><!-- card-header -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table mg-b-0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class=""><i class="fa fa-download"></i></div>
+                      </td>
+                      <td>
+                        <h6 class="mg-b-0 tx-inverse">Download Input File</h6>
+                        <small class="tx-11 tx-gray-500"><a (click)="downloadInputFile(files.storageBucketName)">{{files.uploadFileName}}</a></small>
+                      </td>
+                      
+                    </tr>
+                    <!-- <tr *ngIf="files.status !== 'success'">
+                        <td>
+                          <div class=""><i class="fa fa-download"></i></div>
+                        </td>
+                        <td>
+                          <h6 class="mg-b-0 tx-inverse">Download Error File</h6>
+                          <small class="tx-11 tx-gray-500"><a href="">Download</a></small>
+                        </td>
+                        
+                      </tr> -->
+                  </tbody>
+                </table>
+              </div><!-- table-responsive -->
+            </div><!-- card-body -->
+          </div><!-- card -->
+        </div><!-- col -->
+        
       </div>
 
     

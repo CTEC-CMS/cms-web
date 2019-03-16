@@ -25,38 +25,9 @@ export class MyResponseComponent implements OnInit {
   }
 
   getFiles() {
-    const that = this;
-    // Set the AWS Configuration
-    AWS.config.update(this.awsService.AWS_CONFIG_UPDATE);
-
-    // Create DynamoDB service object
-    const ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
-
-    const params = {
-      ExpressionAttributeValues: {
-        ':statusMessage': { S: 'Success' }
-      },
-      // ProjectionExpression: 'Episode, Title, Subtitle',
-      FilterExpression: 'contains (statusMessage, :statusMessage)',
-      TableName: this.awsService.TABLE_NAME
-    };
-
-    ddb.scan(params, function (err, data) {
-      if (err) {
-        console.log('Error', err);
-      } else {
-        data.Items.forEach(function (element, index, array) {
-            const fileSetup = {
-            reqId: element.id.S,
-            inputFileName: element.uploadFileName.S,
-            status: element.status.S,
-            dateTime: new Date(),
-            totalRecords: element.recordsProcessed.N
-          };
-          that.downloadFile.push(fileSetup);
-        });
-        console.log('Files Fetched Successfully');
-      }
+    this.awsService.getFilesList().subscribe((data: any) => {
+      const fileList = JSON.parse(data.body);
+      this.downloadFile = fileList.Items;
     });
   }
 
