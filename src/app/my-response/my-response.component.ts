@@ -27,8 +27,18 @@ export class MyResponseComponent implements OnInit {
   getFiles() {
     this.awsService.getFilesList().subscribe((data: any) => {
       const fileList = JSON.parse(data.body);
-      this.downloadFile = fileList.Items;
+      let items = [];
+      items =  fileList.Items;
+      items.sort ( (a, b) => {
+        return ( a['id'] > b['id'] ? -1 : 1 );
+      });
+      this.downloadFile = items;
     });
+  }
+
+  refreshList() {
+    this.downloadFile = [];
+    this.getFiles();
   }
 
   viewDetails(files: any) {
