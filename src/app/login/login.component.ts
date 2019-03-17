@@ -13,11 +13,11 @@ export class LoginComponent implements OnInit {
   userName = '';
   password = '';
   loginForm: FormGroup;
+
   constructor(private awsService: AwsService, private fb: FormBuilder, private router: Router) {
     this.userName = this.awsService.USER_NAME;
     this.password = this.awsService.PASSWORD;
-
-   }
+  }
 
   ngOnInit() {
     this.buildForm();
@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
 
   buildForm() {
     this.loginForm = this.fb.group({
-      userName: this.userName,
-      password: this.password
+      userName: '',
+      password: ''
     });
   }
 
   login(formValue) {
     console.log(formValue);
-    if(formValue.userName === this.userName && formValue.password === this.password) {
-this.router.navigate(['/landing']);
+    if (formValue.userName === this.userName && formValue.password === this.password) {
+      this.router.navigate(['/landing']);
     }
   }
 
