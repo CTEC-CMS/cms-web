@@ -101,7 +101,10 @@
                   <!-- slice:1 |  -->
                   <td>{{allFiles.id}}</td>
                   <td>{{allFiles.uploadFileName}}</td>
-                  <td class="tx-medium tx-success">{{allFiles.status}}</td>
+                  <!-- <td class="tx-medium tx-success">{{allFiles.status}}</td> -->
+                  <td class="tx-medium">
+                    <span [ngClass]="allFiles.status === 'Success'? 'tx-success' : 'tx-danger'">{{allFiles.status}}</span>
+                  </td>
                   <td class="tx-medium tx-inverse">{{allFiles.createdOn | date: 'dd-MMM-yyyy hh:mm a'}}</td>
                   <!-- <td class="tx-medium tx-inverse">View Output File</td> -->
                   <td class="tx-medium tx-inverse"> <a (click)="viewDetails(allFiles)"><i class="fa fa-eye"></i></a>
@@ -117,10 +120,17 @@
     </div>
   </div>
 </div>
+
+<label class="custom-file-upload btn btn-indigo btn-icon fab-css">
+  <input type="file" (change)=uploadFile($event)/>
+  <i class="typcn typcn-upload-outline"></i>
+</label>  
+<h5 class="fab-css fab-label">Upload</h5>
+<!-- 
 <label class="custom-file-upload btn btn-indigo btn-icon fab-css">
   <input type="file" (change)=uploadFile($event) />
   <i class="typcn typcn-upload-outline"></i>
-</label>
+</label> -->
 
 <!-- modal -->
 <div id="modaldemo3" class="modal">

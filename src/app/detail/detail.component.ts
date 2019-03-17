@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
     if (this.files === undefined) {
       this.router.navigate(['/myResponse']);
     } else {
-      if (this.files.status !== 'success') {
+      if (this.files.status !== 'Success') {
         this.status = 'error';
         this.getColumnDetails(this.files.statusMessage);
       } else {

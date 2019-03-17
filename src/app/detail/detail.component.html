@@ -108,7 +108,8 @@
         </div><!-- col -->
         <div class="col-sm-6 col-lg-4 col-xl-3 mg-t-20 mg-sm-t-20 mg-lg-t-0">
           <div class="card card-body card-dashboard-fifteen">
-            <h3 class="tx-success">{{files.status}}</h3>
+            <!-- <h3 class="tx-success">{{files.status}}</h3> -->
+            <h3 [ngClass]="files.status === 'Success'? 'tx-success' : 'tx-danger'">{{files.status}}</h3>
             <label>Status</label>
 
 
@@ -154,7 +155,7 @@
             </div>
           </div>
         </div> -->
-        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status !== 'success'">
+        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status !== 'Success'">
             <div class="card">
                 <div class="card-header">
                   <h6 class="card-title tx-14 mg-b-5">Error Detail</h6>
@@ -179,7 +180,7 @@
                 </div><!-- card-body -->
               </div><!-- card -->
         </div><!-- col -->
-        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status === 'success'">
+        <div class="col-gl-5 col-xl-6 mg-t-20" *ngIf="files.status === 'Success'">
           <div class="card">
             <div class="card-header">
               <h6 class="card-title tx-14 mg-b-5">Download standardized Fixed Length Output File</h6>
