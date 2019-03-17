@@ -18,6 +18,9 @@ PMS is capable of receiving files of varied models (payment methodologies), iden
 
 7) Transaction record is maintained in AWS DynamoDB.
 
+## Authentication & Authorization
+Users sign in to our web app through Amazon Cognito user directory services. Via Identity pools, we provide AWS credentials to grant our users access to other AWS services, such as S3. We can enable Security features such as multi-factor authentication (MFA), checks for compromised credentials, account takeover protection, phone and email verification. We create IAM roles and assign them to user groups. API gateway will verify the group membership utilising an AWS Cognito Authorizer.
+
 ## Code Pipeline
 ![Code Pipeline](/images/PMS-CodePipeline.png)
 
@@ -32,6 +35,7 @@ PMS is capable of receiving files of varied models (payment methodologies), iden
 ## Tech/Services used
 <b>Built with</b>
 - [GitHub](https://github.com/)
+- [AWS Cognito](https://aws.amazon.com/cognito/)
 - [AWS S3 Bucket](https://aws.amazon.com/s3/)
 - [AWS Lamda](https://aws.amazon.com/lambda/)
 - [AWS DynamoDB](https://aws.amazon.com/dynamodb/)
@@ -52,6 +56,8 @@ PMS is capable of receiving files of varied models (payment methodologies), iden
 4) user logs into the web app to track requests
 
 #### Workflow
+Basic User Interface (stateless UI) will be designed to provide the user interactions (authentication, file upload, file download and a basic dashboard).
+
 1) User Logs into PMS web application
 
 ![PMS Login](/images/CMS-Login.png)
@@ -64,10 +70,11 @@ PMS is capable of receiving files of varied models (payment methodologies), iden
 
 ![PMS Requests](/images/CMS-ProviderMatching-Requests.png)
 
-4) User clicks on any of the request to see more details along with an option to download the file
+4) User clicks on any of the request to see more details along with an option to "download" the file
 
 ![Detailed Request specific view](/images/CMS-ProviderMatching-RequestView.png)
 
+![Detailed Request specific view of a failed file](/images/CMS-ProviderMatching-RequestView-failed.png)
 
 ## Features
 1) High Performance & High Availability
